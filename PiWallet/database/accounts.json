@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "629067ed92f4c56ab1c403f8"
+  },
+  "account_id": "22A00001",
+  "username": "admin",
+  "password": "$2b$10$q5.c/NDz8jTJ5dQ912cV4.0EhPnZ/aUPspAqpP94qXHwGf4HWlahW",
+  "isAdmin": true,
+  "phone_num": "921077950",
+  "__v": 0,
+  "first_time_login": false
+},{
+  "_id": {
+    "$oid": "629331f315ee5c263732df3d"
+  },
+  "user_id": {
+    "$oid": "629331f315ee5c263732df3b"
+  },
+  "account_id": "22U364920",
+  "username": "1645164248",
+  "password": "$2b$10$H5GvCE9.mc4xX6ogxQybe.1l7MlhycsWymwDhxIBRFZ83gueINGFq",
+  "isAdmin": false,
+  "first_time_login": false,
+  "phone_num": "0123498794",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6293328015ee5c263732df4e"
+  },
+  "user_id": {
+    "$oid": "6293328015ee5c263732df4c"
+  },
+  "account_id": "22U9680120",
+  "username": "6544558237",
+  "password": "$2b$10$WPKOVkqqzJ0v.HGCIXg1P.uoORNtV43dztDBqYe5Ywv0O43.wC5Ea",
+  "isAdmin": false,
+  "first_time_login": false,
+  "phone_num": "16504119132",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "629334ee15ee5c263732df99"
+  },
+  "user_id": {
+    "$oid": "629334ee15ee5c263732df97"
+  },
+  "account_id": "22U4015990",
+  "username": "1538643355",
+  "password": "$2b$10$HisC3.Osdrap9NoiyfevmuTMM1cWHprdWq5A2xrC/fgySSYR8OX4u",
+  "isAdmin": false,
+  "first_time_login": false,
+  "phone_num": "635189113",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295e5d2758306abb5c08dda"
+  },
+  "user_id": {
+    "$oid": "6295e5d2758306abb5c08dd8"
+  },
+  "account_id": "22U3351247",
+  "username": "7916232825",
+  "password": "$2b$10$VytpvTzYR2ErST6XdUjZo.MnnWZJsmnBbDHxpr7EZ5W5W.Pj5uWze",
+  "isAdmin": false,
+  "first_time_login": false,
+  "phone_num": "45618941",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295f0fd4381ba2271c86f25"
+  },
+  "user_id": {
+    "$oid": "6295f0fc4381ba2271c86f23"
+  },
+  "account_id": "22U2996495",
+  "username": "14179983",
+  "password": "$2b$10$5FaZgqVj9a1Zh4aDsvGRFOnK2eaAK.tVVf8.BWfcsA37ycWfPbBcW",
+  "isAdmin": false,
+  "first_time_login": false,
+  "phone_num": "654911894",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295f1884381ba2271c86f5b"
+  },
+  "user_id": {
+    "$oid": "6295f1884381ba2271c86f59"
+  },
+  "account_id": "22U4296403",
+  "username": "9615864202",
+  "password": "$2b$10$xsA5GNOJIxp3xV/slR9KDe8hFLJBe.90R1/HlevOa3FQMRZym1jye",
+  "isAdmin": false,
+  "first_time_login": false,
+  "phone_num": "5298161961",
+  "__v": 0
+}]

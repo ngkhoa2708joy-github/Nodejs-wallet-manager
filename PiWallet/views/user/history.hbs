@@ -1,0 +1,125 @@
+<div class="dashboard_layout_container">
+    <div class="dashboard_layout_body">
+        <!-- {{{content}}} -->
+
+        <body>
+            {{#if error}}
+            <div class="form-group">
+                <div class="alert alert-warning " role="alert">
+                    {{error}}
+                </div>
+            </div>
+            {{/if}}
+            {{#eq userstatus "approved"}}
+            <div class="container-fluid" id="align-table">
+                <form action="/dashboard/history/search" id="" method="GET">
+                    <div class="menu">
+                        <h2>Transaction History ({{transaction.length}}) </h2>
+                        <div class="float-item">
+                            <div>
+                                <label for="type">Choose a type of transaction:</label>
+                                <select name="type">
+                                    <option value="">Option</option>
+                                    <option value="recharge">Recharge</option>
+                                    <option value="withdraw">Withdraw</option>
+                                    <option value="transfer">Transfer</option>
+                                    <option value="phonecard">Phonecard</option>
+                                </select>
+                            </div>
+                            <label>From: </label>
+                            <input type="date" name="from" value="">
+                            <label>To: </label>
+                            <input type="date" name="to" value="">
+                            <button type="submit" class="btn btn-basic"><span class="glyphicon glyphicon-filter"></span>
+                                Search</button>
+                            <button type="button" class="btn btn-success" onclick="window.location.reload()"><span
+                                    class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                            <button type="button" class="btn btn-dark" onclick="window.history.back()" name="goback">Go
+                                Back</button>
+                        </div>
+                    </div>
+                </form>
+                <table class="table table-responsible">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Transaction Type</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    {{#each transaction}}
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{dateFormat date}}
+                            </td>
+                            <td>
+                                {{#eq type "withdraw"}}
+                                Withdraw
+                                {{/eq }}
+                                {{#eq type "transfer"}}
+                                Transfer
+                                {{/eq }}
+                                {{#eq type "recharge"}}
+                                Recharge
+                                {{/eq }}
+                                {{#eq type "phonecard"}}
+                                Phone Recharge Card
+                                {{/eq }}
+                            </td>
+                            <td>
+                                {{currencyFormat amount ' đ'}}
+                            <td>
+                                {{#eq status "success"}}
+                                <button type="button" class="btn btn-success"
+                                    name="status"><strong>Success</strong></button>
+                                {{/eq}}
+                                {{#eq status "pending"}}
+                                <button type="button" class="btn btn-warning"
+                                    name="status"><strong>Pending</strong></button>
+                                {{/eq}}
+                                {{#eq status "fail"}}
+                                <button type="button" class="btn btn-danger"
+                                    name="status"><strong>Fail</strong></button>
+                                {{/eq}}
+                            </td>
+                            <td>
+                                <a href="/dashboard/detail/{{_id}}"><button type="button" class="btn btn-info"
+                                        name="detail">Detail</button></a>
+                            </td>
+                        <tr>
+                    </tbody>
+                    {{/each}}
+                </table>
+                <p>Total number of transaction: <strong class="text-danger">{{transaction.length}}</strong></p>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        {{#paginate pagination type="first"}}
+                        <li {{#if disabled}} class="disabled" {{/if}}><a href="?page={{n}}">First</a></li>
+                        {{/paginate}}
+
+                        {{#paginate pagination type="previous"}}
+                        <li {{#if disabled}} class="disabled" {{/if}}><a href="?page={{n}}">Prev</a></li>
+                        {{/paginate}}
+                        {{#paginate pagination type="middle" limit=pagination.pageCount}}
+                        <li {{#if active}} class="active" {{/if}}><a href="?page={{n}}">{{n}}</a></li>
+                        {{/paginate}}
+
+                        {{#paginate pagination type="next"}}
+                        <li {{#if disabled}} class="disabled" {{/if}}><a href="?page={{n}}">Next</a></li>
+                        {{/paginate}}
+
+                        {{#paginate pagination type="last"}}
+                        <li {{#if disabled}}class="disabled" {{/if}}><a href="?page={{n}}">Last</a></li>
+                        {{/paginate}}
+                    </ul>
+                </nav>
+            </div>
+            {{/eq}}
+        </body>
+    </div>
+</div>
+</body>

@@ -1,0 +1,52 @@
+<body>
+    {{#if error}}
+    <div class="form-group">
+        <div class="alert alert-warning " role="alert">
+            {{error}}
+        </div>
+    </div>
+    {{/if}}
+    {{#eq userstatus "approved"}}
+    <div id="snippetContent">
+        <form class="recharge" action="/dashboard/transfer" method="POST">
+            <div class="container"><br>
+                <h1>Transfer</h1>
+                <button type="button" class="btn btn-dark" onclick="window.history.back()" name="goback">Go
+                    Back</button>
+                <div class="form-group">
+                    <label for="phoneNumber">Recipient's Phone Number
+                        <span style="color: red;">*</span></label>
+                    <input type="number" class="form-control" name="phoneNumber" required /><br>
+                    <div class="form-group">
+                        <label for="name">Recipient's Name</label>
+                        <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" name="name" required /><br>
+                        <div class="form-group">
+                            <label for="party">Charge Party</label>
+                            <span style="color: red;">*</span></label>
+
+                            <select class="form-control" name="party">
+                                <option value="sender">Sender</option>
+                                <option value="recipient">Recipient</option>
+                            </select>
+                            <br>
+                            <div class="form-group">
+                                <label for="amount">Amount</label>
+                                <span style="color: red;">*</span></label>
+                                <input type="number" class="form-control" name="amount" required /><br>
+                                <div class="form-group">
+                                    <label for="description">Note</label>
+                                    <input type="text" class="form-control" name="note" /><br><br>
+                                    {{#if result}}
+                                    <div class="form-group">
+                                        <div class="alert alert-warning " role="alert">
+                                            {{ result }}
+                                        </div>
+                                    </div>
+                                    {{/if}}
+                                    <button type="submit" class="btn btn-primary">Transfer</button><br>
+                                </div>
+        </form>
+    </div>
+    {{/eq}}
+</body>

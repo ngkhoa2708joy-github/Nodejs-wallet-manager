@@ -1,0 +1,44 @@
+<body>
+    {{#if error}}
+    <div class="form-group">
+        <div class="alert alert-warning " role="alert">
+            {{error}}
+        </div>
+    </div>
+    {{/if}}
+    {{#eq userstatus "approved"}}
+    <div id="snippetContent">
+        <form class="recharge" action="/dashboard/recharge" method="POST">
+            <div class="container"><br>
+                <h1>Recharge</h1>
+                <button type="button" class="btn btn-dark" onclick="window.history.back()" name="goback">Go
+                    Back</button>
+                <div class="form-group">
+                    <label for="cardNumber">Card Number
+                        <span style="color: red;">*</span></label>
+                    <input type="number" class="form-control" name="cardNumber" required /><br>
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date</label>
+                        <span style="color: red;">*</span></label>
+                        <input type="date" class="form-control" name="expiryDate" required /><br>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <span style="color: red;">*</span></label>
+                            <input type="number" class="form-control" name="cvv" required /><br>
+                            <div class="form-group">
+                                <label for="amount">Amount</label>
+                                <span style="color: red;">*</span></label>
+                                <input type="number" class="form-control" name="amount" required /><br><br>
+                                <button type="submit" class="btn btn-primary">Recharge</button><br>
+                                {{#if result}}
+                                <div class="form-group">
+                                    <div class="alert alert-warning " role="alert">
+                                        {{ result }}
+                                    </div>
+                                </div>
+                                {{/if}}
+                            </div>
+        </form>
+    </div>
+    {{/eq}}
+</body>

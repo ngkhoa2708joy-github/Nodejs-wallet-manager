@@ -1,0 +1,87 @@
+<body>
+    {{#if error}}
+    <div class="form-group">
+        <div class="alert alert-warning " role="alert">
+            {{error}}
+        </div>
+    </div>
+    {{/if}}
+    {{#eq userstatus "approved"}}
+    <div id="snippetContent">
+        <form class="recharge" action="/dashboard/phonecard" method="POST">
+            <div class="container"><br>
+                <h1>Phone Card</h1>
+                <button type="button" class="btn btn-dark" onclick="window.history.back()" name="goback">Go
+                    Back</button>
+                <div><br>
+                    <label for="serviceProvider">Select a service provider</label>
+                    <select name="serviceProvider" id="serviceProvider" class="form-control">
+                        <option value="Viettel" selected>Viettel</option>
+                        <option value="Mobifone">Mobifone</option>
+                        <option value="Vinaphone">Vinaphone</option>
+                    </select>
+                </div><br>
+                <div class="quantity-container" id="quantity-container">
+                    <div id="card1_container">
+                        <label for="value1">Card#1</label>
+                        <select name="value1" class="form-control">
+                            <option value="10000" selected>10,000</option>
+                            <option value="20000">20,000</option>
+                            <option value="50000">50,000</option>
+                            <option value="100000">100,000</option>
+                        </select>
+                    </div>
+                    <div id="card2_container">
+                        <label for="value2">Card#2</label>
+                        <select name="value2" class="form-control">
+                            <option value="0" selected>None</option>
+                            <option value="10000">10,000</option>
+                            <option value="20000">20,000</option>
+                            <option value="50000">50,000</option>
+                            <option value="100000">100,000</option>
+                        </select>
+                    </div>
+                    <div id="card3_container">
+                        <label for="value3">Card#3</label>
+                        <select name="value3" class="form-control">
+                            <option value="0" selected>None</option>
+                            <option value="10000">10,000</option>
+                            <option value="20000">20,000</option>
+                            <option value="50000">50,000</option>
+                            <option value="100000">100,000</option>
+                        </select>
+                    </div>
+                    <div id="card4_container">
+                        <label for="value4">Card#4</label>
+                        <select name="value4" class="form-control">
+                            <option value="0" selected>None</option>
+                            <option value="10000">10,000</option>
+                            <option value="20000">20,000</option>
+                            <option value="50000">50,000</option>
+                            <option value="100000">100,000</option>
+                        </select>
+                    </div>
+                    <div id="card5_container">
+                        <label for="value5">Card#5</label>
+                        <select name="value5" class="form-control">
+                            <option value="0" selected>None</option>
+                            <option value="10000">10,000</option>
+                            <option value="20000">20,000</option>
+                            <option value="50000">50,000</option>
+                            <option value="100000">100,000</option>
+                        </select>
+                    </div>
+                </div><br><br>
+                <button type="submit" class="btn btn-primary">Purchase</button><br>
+                {{#if result}}
+                <div class="form-group">
+                    <div class="alert alert-warning " role="alert">
+                        {{ result }}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </form>
+    </div>
+    {{/eq}}
+</body>

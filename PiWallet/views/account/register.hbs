@@ -1,0 +1,73 @@
+<div class="register_body">
+  <div class="register_container_wrapper">
+    <div class="register_container">
+
+      <!-- Logo, đường kẻ và tên -->
+      <div class="register_spacing"></div>
+      <img src="/images/icon/logo.webp" width="55" height="55" />
+      <a href="/" class="register_logo_text">TOKO Wallet</a>
+      <hr class="register_hr" />
+
+      <!-- Form và các nút -->
+      <div class="register_form_wrapper">
+        <div class="register_spacing"></div>
+        <form class="register_form" action="/register" enctype="multipart/form-data" role="form" method="POST">
+
+          <!-- Các ô trống -->
+          <div class="register_fields">
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">Full Name</div>
+              <input type="text" name="full_name" class="register_upper_boxes" required />
+            </div>
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">E-mail</div>
+
+              <input type="email" name="email" class="register_upper_boxes" required />
+            </div>
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">Phone number</div>
+
+              <input type="number" name="phone" class="register_upper_boxes" required />
+            </div>
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">Address</div>
+    
+              <input type="text" name="address" class="register_upper_boxes" required />
+            </div>
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">Date of Birth</div>
+              <input type="date" name="birthday" class="register_upper_boxes" required />
+            </div>
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">ID Picture (Upper side)</div>
+              <input type="file" name="id_photo_sidea" class="register_upper_boxes" accept="image/*" required />
+            </div>
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">ID Picture (Lower side)</div>
+              <input type="file" name="id_photo_sideb" class="register_upper_boxes" accept="image/*" required />
+            </div>
+            {{#if error}}
+            <div class="form-group">
+              <div class="alert alert-danger " role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{error}}
+              </div>
+            </div>
+            {{/if}}
+          </div>
+          <div class="register_buttons">
+
+            <!-- hai nút dưới -->
+            <button type="submit" value="login" class="btn btn-warning register_buttons_submit">Submit</button>
+            <br>
+            <a href="/login" class="btn btn-secondary">Login</a>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

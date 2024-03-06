@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TOKO Wallet</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="icon" href="/images/icon/logo.webp" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="/javascripts/main.js"></script>
+</head>
+
+<body>
+  <div class="admin_layout_nav_bar_container">
+    <div class="admin_layout_upper_nav_bar_container">
+      <!-- {{! Logo container }} -->
+      <div class="admin_layout_logo_container">
+        <a class="admin_layout_logo_link" href="/admin">
+          <Image class="admin_layout_upper_nav_logo_picture" src="/images/icon/logo.webp" width="70" height="70" />
+          <div class="admin_layout_upper_nav_logo_text">TOKO wallet | ADMIN</div>
+        </a>
+      </div>
+
+      <!-- {{! admin_name text }} -->
+      <div class="admin-text">
+        <div class="adminname-text" name="adminname-text">ADMIN</div>
+      </div>
+
+      <!-- {{! admin Login Container }} -->
+      <div class="admin_login_container">
+        <div class="admin_layout_login-box" role="button" tabindex="0" title="Account: Default Account "
+          aria-expanded="false">
+          <div class="admin_layout_image_container">
+            <img class="admin_layout_admin_image" src="/images/icon/default-person.png"
+              srcset="/images/icon/default-person.png" alt="" aria-hidden="true" height="70" width="70" />
+          </div>
+          <div class="admin_layout_login_options_window">
+            {{! drop down profile menu }}
+            <ul>
+              <div class="admin_layout_login_admin_area">
+                <div class="admin_layout_upper_admin_information">
+                  <ul>
+                    <li><img class="admin_layout_admin_image_expanded" src="/images/icon/default-person.png"
+                        srcset="/images/icon/default-person.png" alt="" aria-hidden="true" data-noaft="" height="80"
+                        width="80" />
+                    <li><a class="admin_layout_adminname">
+                        ADMIN
+                      </a></li>
+                    <li><a class="admin_layout_email">
+                        {{#if email}}
+                        {{email}}
+                        {{/if}}
+                      </a></li>
+                  </ul>
+                </div>
+                </li>
+                {{! if loged in then this will be log-out, if log out then it's sign in }}
+
+                <li><a href="/password" class="admin_layout_login_box_button">Change
+                    Password</a></li>
+                <form method="post" action="/logout">
+                  <button type="submit" class="user_layout_login_box_button"> Log out</a>
+                </form>
+                </li>
+                {{! zero width space }}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account List
+                <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/admin/unapproved"><span class="glyphicon glyphicon-glyphicon glyphicon-list-alt"></span>
+                    Activation Waiting List</a>
+                </li>
+
+                <li><a href="/admin/approved"><span
+                      class="glyphicon glyphicon-glyphicon glyphicon-list-alt"></span>Active
+                    Account List</a></li>
+                <li><a href="/admin/disabled"><span
+                      class="glyphicon glyphicon-glyphicon glyphicon-list-alt"></span>Disabled
+                    Account List</a></li>
+                <li><a href="/admin/locked"><span class="glyphicon glyphicon-glyphicon glyphicon-list-alt"></span>List
+                    Of
+                    Locked Accounts</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Transaction Pending List
+                <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/admin/withdraw"><span class="glyphicon glyphicon-glyphicon glyphicon-list-alt"></span>
+                    Withdraw</a>
+                </li>
+                <li><a href="/admin/transfer"><span
+                      class="glyphicon glyphicon-glyphicon glyphicon-list-alt"></span>Transfer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {{{body}}}
+</body>
+
+</html>

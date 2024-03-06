@@ -1,0 +1,156 @@
+[{
+  "_id": {
+    "$oid": "629331f315ee5c263732df3b"
+  },
+  "full_name": "User 1",
+  "email": "user1@gmail.com",
+  "address": "address 1",
+  "dob": {
+    "$date": {
+      "$numberLong": "1390953600000"
+    }
+  },
+  "phone": "0123498794",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653813747000"
+    }
+  },
+  "loginFail": 0,
+  "abnormalLogin": 0,
+  "status": "approved",
+  "balance": 10860000,
+  "idfront": "/test_upload/22U364920/sideA_29522_22U364920.png",
+  "idback": "/test_upload/22U364920/sideB_29522_22U364920.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6293328015ee5c263732df4c"
+  },
+  "full_name": "User 2",
+  "email": "user2@gmail.com",
+  "address": "address 2 ",
+  "dob": {
+    "$date": {
+      "$numberLong": "1107302400000"
+    }
+  },
+  "phone": "16504119132",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653813888000"
+    }
+  },
+  "lockedAt": {
+    "$date": {
+      "$numberLong": "1653815231767"
+    }
+  },
+  "loginFail": 3,
+  "abnormalLogin": 1,
+  "status": "locked",
+  "balance": 0,
+  "idfront": "/test_upload/22U9680120/sideA_29522_22U9680120.png",
+  "idback": "/test_upload/22U9680120/sideB_29522_22U9680120.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "629334ee15ee5c263732df97"
+  },
+  "full_name": "User 6",
+  "email": "user6@gmail.com",
+  "address": "address 6",
+  "dob": {
+    "$date": {
+      "$numberLong": "719625600000"
+    }
+  },
+  "phone": "635189113",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653814510000"
+    }
+  },
+  "loginFail": 0,
+  "abnormalLogin": 0,
+  "status": "unapproved",
+  "balance": 0,
+  "idfront": "/test_upload/22U4015990/sideA_29522_22U4015990.png",
+  "idback": "/test_upload/22U4015990/sideB_29522_22U4015990.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295e5d2758306abb5c08dd8"
+  },
+  "full_name": "User 3",
+  "email": "user3@gmail.com",
+  "address": "Address 3",
+  "dob": {
+    "$date": {
+      "$numberLong": "888019200000"
+    }
+  },
+  "phone": "45618941",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653990866000"
+    }
+  },
+  "loginFail": 0,
+  "abnormalLogin": 0,
+  "status": "approved",
+  "balance": 475000,
+  "idfront": "/test_upload/22U3351247/sideA_22U3351247.png",
+  "idback": "/test_upload/22U3351247/sideB_22U3351247.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295f0fc4381ba2271c86f23"
+  },
+  "full_name": "User 7",
+  "email": "user7@gmail.com",
+  "address": "address 7",
+  "dob": {
+    "$date": {
+      "$numberLong": "883008000000"
+    }
+  },
+  "phone": "654911894",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653993724000"
+    }
+  },
+  "loginFail": 0,
+  "abnormalLogin": 0,
+  "status": "waiting",
+  "balance": 0,
+  "idfront": "/test_upload/22U2996495/sideA_22U2996495.png",
+  "idback": "/test_upload/22U2996495/sideB_22U2996495.png",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295f1884381ba2271c86f59"
+  },
+  "full_name": "User 5",
+  "email": "user5@gmail.com",
+  "address": "address 5",
+  "dob": {
+    "$date": {
+      "$numberLong": "1671926400000"
+    }
+  },
+  "phone": "5298161961",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1653993864000"
+    }
+  },
+  "loginFail": 0,
+  "abnormalLogin": 0,
+  "status": "disabled",
+  "balance": 0,
+  "idfront": "/test_upload/22U4296403/sideA_22U4296403.png",
+  "idback": "/test_upload/22U4296403/sideB_22U4296403.png",
+  "__v": 0
+}]

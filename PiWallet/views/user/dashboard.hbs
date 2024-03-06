@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TOKO Wallet</title>
+    <meta name="description" content="TOKO Dashboard" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="/images/icon/logo.webp" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+</head>
+
+<body>
+    <div class="user_layout_container">
+        <div class="user_layout_nav_bar_container">
+            <div class="user_layout_upper_nav_bar_container">
+                {{! Logo container }}
+                <div class="user_layout_logo_container">
+                    <a class="user_layout_logo_link" href="/dashboard">
+                        <Image class="user_layout_upper_nav_logo_picture" src="/images/icon/logo.webp" width="70"
+                            height="70" />
+                        <div class="user_layout_upper_nav_logo_text">TOKO Wallet</div>
+                    </a>
+                </div>
+                <!-- {{! user_name text }} -->
+
+                <div class="user-text">
+                    <div class="username-text" name="username-text">{{full_name}}</div>
+                </div>
+                {{! User Login Container }}
+                <div class="user_login_container">
+                    <div class="user_layout_login-box" role="button" tabindex="0" title="Account: Default Account "
+                        aria-expanded="false">
+
+                        <div class="user_layout_image_container">
+                            <img class="user_layout_user_image" src="/images/icon/default-person.png"
+                                srcset="/images/icon/default-person.png" alt="" aria-hidden="true" height="70"
+                                width="70" />
+                        </div>
+                        <div class="user_layout_login_options_window">
+                            {{! drop down profile menu }}
+                            <ul>
+                                <div class="user_layout_login_user_area">
+                                    <div class="user_layout_upper_user_information">
+                                        <ul>
+                                            <li><img class="user_layout_user_image_expanded"
+                                                    src="/images/icon/default-person.png"
+                                                    srcset="/images/icon/default-person.png" alt="" aria-hidden="true"
+                                                    data-noaft="" height="80" width="80" />
+                                            <li><a href="/dashboard" class="user_layout_username">
+                                                    {{full_name}}
+                                                </a></li>
+                                            <li><a href="/dashboard" class="user_layout_email">
+                                                    {{ email }}
+                                                </a></li>
+
+                                        </ul>
+                                    </div>
+                                    </li>
+                                    {{! if loged in then this will be log-out, if log out then it's sign in }}
+
+                                    <li><a href="/dashboard/profile" class="user_layout_login_box_button">Profile</a>
+                                    </li>
+                                    <li><a href="/password" class="user_layout_login_box_button">Change
+                                            Password</a></li>
+                                    <form method="post" action="/logout">
+                                        <button type="submit" class="user_layout_login_box_button"> Log out</a>
+                                    </form>
+
+                                    {{! zero width space }}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="user_layout_lower_nav_bar_container">
+                <a class="user_layout_lower_nav_bar_buttons" href="/dashboard">
+                    Dashboard
+                </a>
+                <a class="user_layout_lower_nav_bar_buttons">|</a>
+                <a class="user_layout_lower_nav_bar_buttons" href="/dashboard/transfer">Transfer</a>
+                <a class="user_layout_lower_nav_bar_buttons" href="/dashboard/recharge">Recharge</a>
+                <a class="user_layout_lower_nav_bar_buttons" href="/dashboard/withdraw">Withdraw</a>
+                <a class="user_layout_lower_nav_bar_buttons" href="/dashboard/phonecard">Phone Card</a>
+                <a class="user_layout_lower_nav_bar_buttons" href="/dashboard/history">Transaction
+                    history</a>
+            </div>
+        </div>
+
+        <div class="user_layout_body">
+            {{{body}}}
+        </div>
+    </div>
+</body>
+
+</html>

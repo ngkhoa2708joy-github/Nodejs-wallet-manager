@@ -1,0 +1,73 @@
+<div class="register_body">
+  <div class="register_spacing"></div>
+  <div class="register_container_wrapper">
+    <div class="register_spacing"></div>
+    <div class="register_container">
+      <!-- Logo, đường kẻ và tên -->
+
+
+      <div class="register_spacing"></div>
+      <img src="/images/icon/logo.webp" width="55" height="55" />
+      <a href="/" class="register_logo_text">TOKO Wallet</a>
+      <hr class="register_hr" />
+      <!-- Form và các nút -->
+
+      <div class="register_form_wrapper">
+        <div class="register_spacing"></div>
+        <form
+          class="register_form"
+          action="/update_id"
+          enctype="multipart/form-data"
+          role="form"
+          method="POST"
+        >
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">ID Picture (Upper side)</div>
+              <input
+                type="file"
+                name="id_photo_sidea"
+                class="register_upper_boxes"
+                accept="image/*"
+                required
+              />
+            </div>
+            <div class="register_text_box_container">
+              <div class="register_text_box_label">ID Picture (Lower side)</div>
+              <input
+                type="file"
+                name="id_photo_sideb"
+                class="register_upper_boxes"
+                accept="image/*"
+                required
+              />
+            </div>
+            {{#if error}}
+              <div class="form-group">
+                <div class="alert alert-danger" role="alert">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="alert"
+                  >&times;</button>
+                  {{error}}
+                </div>
+              </div>
+            {{/if}}
+          </div>
+          <div class="register_random_spacing_top"></div>
+          <hr />
+          <div class="register_buttons">
+
+            <!-- hai nút dưới -->
+            
+            <button type="submit" class="register_register">Update ID Picture</button>
+          </div>
+          <div class="register_random_spacing_top"></div>
+        </form>
+      </div>
+      <div class="register_spacing"></div>
+    </div>
+    <div class="register_spacing"></div>
+  </div>
+  <div class="register_spacing"></div>
+</div>

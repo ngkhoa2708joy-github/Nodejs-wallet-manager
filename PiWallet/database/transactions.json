@@ -1,0 +1,189 @@
+[{
+  "_id": {
+    "$oid": "6295e9eb758306abb5c08e56"
+  },
+  "userId": [
+    {
+      "userid": "629331f315ee5c263732df3b",
+      "name": "User 1",
+      "_id": {
+        "$oid": "6295e9eb758306abb5c08e57"
+      }
+    }
+  ],
+  "type": "phonecard",
+  "amount": 140000,
+  "date": {
+    "$date": {
+      "$numberLong": "1653991915826"
+    }
+  },
+  "status": "success",
+  "phonecard": [
+    {
+      "phoneCard1": "1111157946",
+      "price1": 10000,
+      "phoneCard2": "1111170538",
+      "price2": 10000,
+      "phoneCard3": "1111129133",
+      "price3": 50000,
+      "phoneCard4": "1111120472",
+      "price4": 20000,
+      "phoneCard5": "1111155702",
+      "price5": 50000,
+      "_id": {
+        "$oid": "6295e9eb758306abb5c08e58"
+      }
+    }
+  ],
+  "operator": "Viettel",
+  "recipient": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295ea55758306abb5c08e6a"
+  },
+  "userId": [
+    {
+      "userid": "629331f315ee5c263732df3b",
+      "name": "User 1",
+      "_id": {
+        "$oid": "6295ea55758306abb5c08e6b"
+      }
+    }
+  ],
+  "type": "withdraw",
+  "amount": 5500000,
+  "fee": 275000,
+  "date": {
+    "$date": {
+      "$numberLong": "1653992021663"
+    }
+  },
+  "status": "pending",
+  "note": "Tiền học phí",
+  "card": "111111",
+  "recipient": [],
+  "phonecard": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295eaa0758306abb5c08e75"
+  },
+  "userId": [
+    {
+      "userid": "629331f315ee5c263732df3b",
+      "name": "User 1",
+      "_id": {
+        "$oid": "6295eaa0758306abb5c08e76"
+      }
+    }
+  ],
+  "type": "transfer",
+  "amount": 5500000,
+  "fee": 275000,
+  "date": {
+    "$date": {
+      "$numberLong": "1653992096798"
+    }
+  },
+  "status": "pending",
+  "note": "Tiền cho",
+  "charge_party": "sender",
+  "recipient": [
+    {
+      "phone": "45618941",
+      "rename": "User 3",
+      "_id": {
+        "$oid": "6295eaa0758306abb5c08e77"
+      }
+    }
+  ],
+  "phonecard": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295ead8758306abb5c08e81"
+  },
+  "userId": [
+    {
+      "userid": "629331f315ee5c263732df3b",
+      "name": "User 1",
+      "_id": {
+        "$oid": "6295ead8758306abb5c08e82"
+      }
+    }
+  ],
+  "type": "recharge",
+  "amount": 500000,
+  "date": {
+    "$date": {
+      "$numberLong": "1653992152762"
+    }
+  },
+  "status": "success",
+  "card": "111111",
+  "recipient": [],
+  "phonecard": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295eaf1758306abb5c08e89"
+  },
+  "userId": [
+    {
+      "userid": "629331f315ee5c263732df3b",
+      "name": "User 1",
+      "_id": {
+        "$oid": "6295eaf1758306abb5c08e8a"
+      }
+    }
+  ],
+  "type": "recharge",
+  "amount": 1000000,
+  "date": {
+    "$date": {
+      "$numberLong": "1653992177614"
+    }
+  },
+  "status": "success",
+  "card": "222222",
+  "recipient": [],
+  "phonecard": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6295eb9c758306abb5c08e99"
+  },
+  "userId": [
+    {
+      "userid": "629331f315ee5c263732df3b",
+      "name": "User 1",
+      "_id": {
+        "$oid": "6295eb9c758306abb5c08e9a"
+      }
+    }
+  ],
+  "type": "transfer",
+  "amount": 500000,
+  "fee": 25000,
+  "date": {
+    "$date": {
+      "$numberLong": "1653992348411"
+    }
+  },
+  "status": "success",
+  "note": "Tiền mừng tuổi",
+  "charge_party": "recipient",
+  "recipient": [
+    {
+      "phone": "45618941",
+      "rename": "User 3",
+      "_id": {
+        "$oid": "6295eb9c758306abb5c08e9b"
+      }
+    }
+  ],
+  "phonecard": [],
+  "__v": 0
+}]

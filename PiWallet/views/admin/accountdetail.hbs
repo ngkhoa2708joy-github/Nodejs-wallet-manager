@@ -1,0 +1,233 @@
+<body>
+    <div id="snippetContent">
+
+        <form enctype="multipart/form-data" action="" method="POST">
+            <div class="container">
+                <div class="row gutters">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="row gutters">
+                                    <h1>Profile</h1>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-dark" onclick="goBack()" name="goback">Go
+                                            Back</button>
+                                        <div class="form-group">
+                                            <label for="userId">User ID<span style="color: red;">*</span></label>
+                                            <input type="text" class="form-control" name="userId" value="{{detail._id}}"
+                                                readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fullName">Full Name</label>
+                                            <input type="text" class="form-control" value="{{detail.full_name}}"
+                                                name="fullName" readonly="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="address">Address</label>
+                                            <input type="text" class="form-control" value="{{detail.address}}"
+                                                name="address" readonly="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="number" class="form-control" value="{{detail.phone}}"
+                                                name="phone" readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" value="{{detail.email}}"
+                                                name="email" readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Date of Birth</label>
+                                            <input type="text" class="form-control" value="{{dateFormat detail.dob}}"
+                                                name="dob" readonly="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{#eq detail.status "locked"}}
+                                        <div class="form-group">
+                                            <label>Locked Date</label>
+                                            <input type="text" class="form-control" value="{{dateHour detail.lockedAt}}"
+                                                name="lockedDate" readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Failed Login Attempt</label>
+                                            <input type="text" class="form-control" value="{{detail.loginFail}}"
+                                                name="lockedDate" readonly="">
+                                        </div>
+                                        {{/eq}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="frontId">Front ID Card</label>
+                                            <img src="{{detail.idfront}}" alt="Front ID Card" width="300" height="200">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="backId">Back ID Card</label>
+                                            <img src="{{detail.idback}}" alt="Back ID Card" width="300" height="200">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Account Status:
+                                        {{#eq detail.status "approved"}}
+                                        <td><button class="btn btn-success"><strong>Active</strong></button></td>
+                                        {{/eq }}
+
+                                        {{#eq detail.status "locked"}}
+                                        <td><button type="button" class="btn btn-light"><strong>Locked</strong></button>
+                                        </td>
+                                        {{/eq }}
+
+                                        {{#eq detail.status "disabled"}}
+                                        <td><button type="button"
+                                                class="btn btn-danger"><strong>Disabled</strong></button></td>
+                                        {{/eq }}
+
+                                        {{#eq detail.status "unapproved"}}
+                                        <td><button name="unapproved" type="button"
+                                                class="btn btn-warning"><strong>Unapproved</strong></button></td>
+                                        {{/eq }}
+
+                                        {{#eq detail.status "waiting"}}
+                                        <td><button name="waiting" type="button" class="btn btn-warning">
+                                                <stong>Wait for
+                                                    update</stong>
+                                            </button></td>
+                                        {{/eq }}
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="container text-center">
+                                    <td>
+                                        {{#eq detail.status "unapproved"}}
+                                        <a><button data-id="{{detail._id}}" type="button" id="approvebtn"
+                                                class="btn btn-success btn-approve" name="aprrove">Approve</button></a>
+
+                                        <a><button data-id="{{detail._id}}" type="button"
+                                                class="btn btn-primary btn-send"
+                                                name="complementary">Complementary</button></a>
+
+                                        <a><button data-id="{{detail._id}}" type="button"
+                                                class="btn btn-danger btn-disable" name="disable">Disable</button></a>
+                                        {{/eq }}
+                                        {{#eq detail.status "waiting"}}
+                                        <a><button data-id="{{detail._id}}" type="button" id="approvebtn"
+                                                class="btn btn-success btn-approve" name="aprrove">Approve</button></a>
+
+                                        <a><button data-id="{{detail._id}}" type="button"
+                                                class="btn btn-primary btn-send"
+                                                name="complementary">Complementary</button></a>
+
+                                        <a><button data-id="{{detail._id}}" type="button"
+                                                class="btn btn-danger btn-disable" name="disable">Disable</button></a>
+                                        {{/eq }}
+                                        {{#eq detail.status "locked"}}
+                                        <a><button data-id="{{detail._id}}" data-name="{{detail.full_name}}"
+                                                data-lock="{{detail.lockedAt}}" type="button"
+                                                class="btn btn-info btn-unlock" name="unlock">Unlock</button></a>
+                                        {{/eq }}
+
+                                    </td>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </div>
+    <!-- Active Modal -->
+    <div class="modal fade" id="approve-confirm" tabindex="-1" role="dialog" aria-labelledby="approveLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Active Account</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to active this account?
+                </div>
+                <div class="modal-footer">
+                    <button data-id="id" id="approved" type="button" class="btn btn-success">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disable Modal -->
+    <div class="modal fade" id="disable-confirm" tabindex="-1" role="dialog" aria-labelledby="decline"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Disable Account</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to disable this account?
+                </div>
+                <div class="modal-footer">
+                    <button data-id="id" id="disabled" type="button" class="btn btn-danger">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complementary Modal -->
+    <div class="modal fade" id="send-confirm" tabindex="-1" role="dialog" aria-labelledby="sendLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Request Additional Account Information</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to send a request to this account?
+                </div>
+                <div class="modal-footer">
+                    <button data-id="id" id="sent" type="button" class="btn btn-primary">Send</button>
+                    <button type="button" class="btn btn-sencondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Unlock Modal -->
+    <div class="modal fade" id="unlock-confirm" tabindex="-1" role="dialog" aria-labelledby="unlockLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Unlock Account</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to unlock <strong id="account">test</strong> account?
+                </div>
+                <div class="modal-footer">
+                    <button data-id="id" data-lock="date" id="unlocked" type="button"
+                        class="btn btn-primary">Yes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

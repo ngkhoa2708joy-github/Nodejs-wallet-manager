@@ -1,0 +1,232 @@
+<body>
+    <div id="snippetContent">
+        <form enctype="multipart/form-data" action="" method="POST">
+            <div class="container">
+                <div class="row gutters">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <div class="row gutters">
+                                    <h1>Transaction Detail</h1>
+                                    <div class="col">
+                                        <button type="button" class="btn btn-dark" onclick="window.history.back()"
+                                            name="goback">Go
+                                            Back</button>
+                                        <div class="form-group">
+                                            <label for="transId">Transaction ID<span
+                                                    style="color: red;">*</span></label>
+                                            <input type="text" class="form-control" name="transId"
+                                                value="{{detail._id}}" readonly="">
+                                        </div>
+                                        {{#eq detail.type "transfer"}}
+                                        <div class="form-group">
+                                            <label for="sender">Sender</label>
+                                            <input type="text" class="form-control" value="{{detail.userId.[0].name}}"
+                                                name="sender" readonly="">
+                                        </div>
+                                        {{/eq}}
+                                        {{#eq detail.type "withdraw"}}
+                                        <div class="form-group">
+                                            <label for="account">Account</label>
+                                            <input type="text" class="form-control" value="{{detail.userId.[0].name}}"
+                                                name="account" readonly="">
+                                        </div>
+                                        {{/eq}}
+                                        {{#eq detail.type "phonecard"}}
+                                        <div class="form-group">
+                                            <label for="account">Account</label>
+                                            <input type="text" class="form-control" value="{{detail.userId.[0].name}}"
+                                                name="account" readonly="">
+                                        </div>
+                                        {{/eq}}
+                                        {{#eq detail.type "recharge"}}
+                                        <div class="form-group">
+                                            <label for="account">Account</label>
+                                            <input type="text" class="form-control" value="{{detail.userId.[0].name}}"
+                                                name="account" readonly="">
+                                        </div>
+                                        {{/eq}}
+                                        <div class="form-group">
+                                            <label for="type">Transaction Type</label>
+                                            {{#eq detail.type "phonecard"}}
+                                            <input type="text" class="form-control" value="Phone Recharge Card"
+                                                name="type" readonly="">
+                                            {{/eq }}
+                                            {{#eq detail.type "withdraw"}}
+                                            <input type="text" class="form-control" value="Withdraw" name="type"
+                                                readonly="">
+                                            {{/eq }}
+                                            {{#eq detail.type "transfer"}}
+                                            <input type="text" class="form-control" value="Transfer" name="type"
+                                                readonly="">
+                                            {{/eq }}
+                                            {{#eq detail.type "recharge"}}
+                                            <input type="text" class="form-control" value="Recharge" name="type"
+                                                readonly="">
+                                            {{/eq }}
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date">Date</label>
+                                            <input type="text" class="form-control" value="{{dateHour detail.date}}"
+                                                name="date" readonly="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="amount">Amount</label>
+                                            <input type="text" class="form-control"
+                                                value="{{currencyFormat detail.amount ' đ'}}" id="amount" name="amount"
+                                                readonly="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{#eq detail.type "transfer"}}
+                                            <div class="form-group">
+                                                <label for="fee">Fee</label>
+                                                <input type="text" class="form-control"
+                                                    value="{{currencyFormat detail.fee ' đ'}}" id="fee" name="fee"
+                                                    readonly="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Note</label>
+                                                <textarea style="resize: none;" type="text" class="form-control"
+                                                    name="note" readonly="">{{detail.note}}</textarea>
+                                            </div>
+                                            {{/eq}}
+                                            <label>Status:</label>
+                                            {{#eq detail.status "success"}}
+                                            <td><button class="btn btn-success"><strong>Success</strong></button></td>
+                                            {{/eq }}
+                                            {{#eq detail.status "pending"}}
+                                            <td><button class="btn btn-warning"><strong>Pending
+                                                        Approval</strong></button></td>
+                                            {{/eq }}
+                                            {{#eq detail.status "fail"}}
+                                            <td><button class="btn btn-danger"><strong>Fail</strong></button></td>
+                                            {{/eq }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{#eq detail.type "phonecard"}}
+                                        <div class="form-group">
+                                            <label>Operator</label>
+                                            <input type="text" class="form-control" value="{{detail.operator}}"
+                                                name="card" readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Card Number</label>
+                                            <textarea style="resize: none; height: 300px;" type="text"
+                                                class="form-control" readonly="">{{ detail.phonecard }}</textarea>
+                                        </div>
+                                        {{/eq}}
+                                        {{#eq detail.type "recharge"}}
+                                        <div class="form-group">
+                                            <label>Card Number</label>
+                                            <input type="text" class="form-control" value="{{detail.card}}" name="card"
+                                                readonly="">
+                                        </div>
+                                        {{/eq}}
+                                        {{#eq detail.type "withdraw"}}
+                                        <div class="form-group">
+                                            <label for="fee">Fee</label>
+                                            <input type="text" class="form-control"
+                                                value="{{currencyFormat detail.fee ' đ'}}" id="fee" name="fee"
+                                                readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Card Number</label>
+                                            <input type="text" class="form-control" value="{{detail.card}}" name="card"
+                                                readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Note</label>
+                                            <textarea style="resize: none;" type="text" class="form-control" name="note"
+                                                readonly="">{{detail.note}}</textarea>
+                                        </div>
+                                        {{/eq}}
+                                        {{#eq detail.type "transfer"}}
+                                        <div class="form-group">
+                                            <label>Recipient's Name</label>
+                                            <input type="text" class="form-control"
+                                                value="{{detail.recipient.[0].rename}}" name="rename" readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Recipient's Phone Number</label>
+                                            <input type="text" class="form-control"
+                                                value="{{detail.recipient.[0].phone}}" name="phone" readonly="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Charge Party</label>
+                                            <input type="text" class="form-control" value="{{detail.charge_party}}"
+                                                name="party" readonly="">
+                                        </div>
+                                        {{/eq}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="container text-center">
+                                    <td>
+                                        {{#eq detail.status "pending"}}
+                                        <a><button data-id="{{detail._id}}" data-amount="{{detail.amount}}"
+                                                data-fee="{{detail.fee}}" data-sender="{{detail.userId.[0].userid}}"
+                                                data-receiver="{{detail.recipient.[0].phone}}" type="button"
+                                                class="btn btn-success btn-accept" name="accept">Accept</button></a>
+                                        <a><button data-id="{{detail._id}}" type="button"
+                                                class="btn btn-danger btn-decline" name="decline">Decline</button></a>
+                                        {{/eq }}
+
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Accept Modal -->
+    <div class="modal fade" id="accept-confirm" tabindex="-1" role="dialog" aria-labelledby="acceptLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Transfer Transaction</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to accept this transfer transaction?
+                </div>
+                <div class="modal-footer">
+                    <button data-id="id" data-amount="" data-fee="" data-sender="" data-receiver="" id="accepted"
+                        type="button" class="btn btn-success">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Decline Modal -->
+    <div class="modal fade" id="decline-confirm" tabindex="-1" role="dialog" aria-labelledby="decline"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Withdrawal Transaction</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to decline this withdrawal transaction?
+                </div>
+                <div class="modal-footer">
+                    <button id="declined" type="button" class="btn btn-danger">Confirm</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
